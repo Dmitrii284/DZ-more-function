@@ -22,12 +22,16 @@ int mirror_namber(int n) {
 template <typename T>
 void mass(T arr[], const int length) {
 	std::cout << '[';
-	for (int i = 0; i > length; i++) 
-		std::cout << arr[i] << ", ";
-		std::cout << "\b\b]\n";
+		for(int i = 0; i < length; i++) 
+			std::cout << arr[i] << ", ";
+			std::cout << "\b\b]\n";
 }
-
-//Array worker function/
+//Array worker function
+void move_mass(int arr[], const int length, int n) {
+	for (int i = 0; i < length; i++)
+		for (int k = n; k >= n; k++)
+			std::cout<<", ";
+}
   
 
 int main() {
