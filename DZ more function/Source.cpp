@@ -1,10 +1,10 @@
 #include <iostream>
 /*Task 1.*/
 int func(int n, int m) {
-	for (int i = n/2; i >=1;i--) {	
-		for(int i = m/2; i >=1;i--)
+	for (int i = n / 2; i >= 1; i--) {
+		for (int i = m / 2; i >= 1; i--)
 			if (n % i == 0 && m % i == 0)
-				  return i;
+				return i;
 	}
 }
 /*Task 2.*/
@@ -22,17 +22,21 @@ int mirror_namber(int n) {
 template <typename T>
 void mass(T arr[], const int length) {
 	std::cout << '[';
-		for(int i = 0; i < length; i++) 
-			std::cout << arr[i] << ", ";
-			std::cout << "\b\b]\n";
+	for (int i = 0; i < length; i++)
+		std::cout << arr[i] << ", ";
+	std::cout << "\b\b]\n";
 }
 //Array worker function
 void move_mass(int arr[], const int length, int n) {
+	int b = length;
 	for (int i = 0; i < length; i++)
-		for (int k = n; k >= n; k++)
-			std::cout<<", ";
+		if (arr[i] == n) {
+			b = i;
+			break;
+		}
+	// сортировка
 }
-  
+
 
 int main() {
 	setlocale(LC_ALL, "Rus");
@@ -48,22 +52,21 @@ int main() {
 	/*Task 2.
 		Write a function that takes a number and returns it in reflection form.*/
 
-	/*std::cout << "\nTask 2.\nEnter the number and returns it in reflection form.\n";
-	std::cout << "Enter the number -> ";
-	std::cin >> m;
-	std::cout << "Returning a number in reflection form: " << mirror_namber(m)<< std::endl;*/
+		/*std::cout << "\nTask 2.\nEnter the number and returns it in reflection form.\n";
+		std::cout << "Enter the number -> ";
+		std::cin >> m;
+		std::cout << "Returning a number in reflection form: " << mirror_namber(m)<< std::endl;*/
 
-	/*Task 3.
-		The function takes an array, its lengthand, and the number N. We find the element of the array,
-		sort the number to the right of the given number and display its position.*/
+		/*Task 3.
+			The function takes an array, its lengthand, and the number N. We find the element of the array,
+			sort the number to the right of the given number and display its position.*/
 
 	const int size = 10;
-	int array[size]{ 7, 6, 10, 45, 56, 67, 78, 4, 12, 66 };	
+	int array[size]{ 7, 6, 10, 45, 56, 67, 78, 4, 12, 66 };
 	mass(array, size);
-	
 
 
-	
+
+
 	return 0;
 }
-		
