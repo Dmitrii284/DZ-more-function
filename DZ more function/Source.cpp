@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 /*Task 1.*/
 int func(int n, int m) {
 	for (int i = n / 2; i >= 1; i--) {
@@ -27,14 +28,24 @@ void mass(T arr[], const int length) {
 	std::cout << "\b\b]\n";
 }
 //Array worker function
-void move_mass(int arr[], const int length, int n) {
-	int b = length;
+int move_mass(int arr[], const int length, int n) {
+	int b = 0;
 	for (int i = 0; i < length; i++)
 		if (arr[i] == n) {
+			return i;
+		}
+	for(int i = length - 1; i > 0; i--)
+		if (arr[i] < 0) {
 			b = i;
 			break;
 		}
-	// сортировка
+	// sort
+	for (int i = b - 1; i > n + 1; i--) {
+		for (int j = n; i < j; j++)
+			if (arr[j] > arr[i + 1])
+				std::swap(arr[j], arr[j + 1]);
+	}
+	return -1;
 }
 
 
@@ -43,8 +54,8 @@ int main() {
 
 	/*Task 1.
 		A function that takes two numbers and returns their greatest divisor*/
-	int n, m;
-	/*std::cout << "Task 1.\nEnter the two numbers -> \n";
+	/*int n, m;
+	std::cout << "Task 1.\nEnter the two numbers -> \n";
 	std::cin >> n >> m;
 	std::cout<< "\nTheir greatest divisor: " << func(n, m) << std:: endl;*/
 
@@ -63,8 +74,10 @@ int main() {
 
 	const int size = 10;
 	int array[size]{ 7, 6, 10, 45, 56, 67, 78, 4, 12, 66 };
+	int f = 45;
 	mass(array, size);
-
+	
+	std::cout << move_mass(array, size, f) << std::endl;
 
 
 
