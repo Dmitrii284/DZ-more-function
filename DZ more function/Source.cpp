@@ -49,45 +49,31 @@ void fill_arr(int arr[], const int length, int num1, int num2) {
 	for (int i = 0; i < length; i++) 
 		arr[i] = rand()%(num1 - num2) + num1;
 }
-void sort_mass(int arr[], const int length) {
-	int first = 0, last = 0;
-	for (int i = 0; i < length; i++)
-		if (arr[i] < 0) {
-			first = i;
-			break;
-		}
-	for (int i = length - 1; i > 0; i--)
-		if (arr[i] < 0) {
-			last = i;
-			break;
-		}
-	for (int i = first; i < last; i++)
-		arr[i];
-}
+
 
 int main() {
 	setlocale(LC_ALL, "Rus");
 
 	/*Task 1.
 		A function that takes two numbers and returns their greatest divisor*/
-	/*int n, m;
+	int n, m;
 	std::cout << "Task 1.\nEnter the two numbers -> \n";
 	std::cin >> n >> m;
-	std::cout<< "\nTheir greatest divisor: " << func(n, m) << std:: endl;*/
+	std::cout<< "\nTheir greatest divisor: " << func(n, m) << std:: endl;
 
 
 	/*Task 2.
 		Write a function that takes a number and returns it in reflection form.*/
 
-		/*std::cout << "\nTask 2.\nEnter the number and returns it in reflection form.\n";
+		std::cout << "\nTask 2.\nEnter the number and returns it in reflection form.\n";
 		std::cout << "Enter the number -> ";
 		std::cin >> m;
-		std::cout << "Returning a number in reflection form: " << mirror_namber(m)<< std::endl;*/
+		std::cout << "Returning a number in reflection form: " << mirror_namber(m)<< std::endl;
 
 		/*Task 3.
 			The function takes an array, its lengthand, and the number N. We find the element of the array,
 			sort the number to the right of the given number and display its position.*/
-	/*std::cout << "\nTask 3.\nSort the number to the right of the given number and display its position.\n";
+	std::cout << "\nTask 3.\nSort the number to the right of the given number and display its position.\n";
 	const int size = 10;
 	int array[size]{ 7, 6, 10, 45, 56, 67, 78, 4, 12, 66 };
 	int f = 45;
@@ -98,7 +84,7 @@ int main() {
 	 std::cout << "Итоговый массив: \n";
 	 mass(array, size);
 	 std::cout << std::endl;
-	 */
+	 
 
 	/*Task 4
 		Create a function that accepts empty
@@ -111,9 +97,7 @@ int main() {
 	const int size1 = 15;
 	int arr1[size1];
 	fill_arr(arr1, size1, 10, 15);
-	mass(arr1, size1);
-	sort_mass(arr1, size1);
-	mass(arr1, size1);
+	mass(arr1, size1);	
 	std::cout << std::endl;
 
 	return 0;
